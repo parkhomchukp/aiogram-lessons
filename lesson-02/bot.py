@@ -59,7 +59,7 @@ async def process_photo_command(message: types.Message):
 
 @dp.message_handler(commands=['group'])
 async def process_group_command(message: types.Message):
-    media = [InputMediaVideo(VIDEO, 'ёжик и котятки')]
+    media = [InputMediaVideo(VIDEO, caption='ёжик и котятки')]
     for photo_id in KITTENS:
         media.append(InputMediaPhoto(photo_id))
     await bot.send_media_group(message.from_user.id, media)
